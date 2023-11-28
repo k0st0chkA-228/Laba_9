@@ -87,6 +87,7 @@ class Login_in:
             try:
                 f = open('Users.txt', 'r')
                 text = f.read().split()
+                print(text)
                 for i in text:
                     if i.split(':')[0] == username:
                         if password == i.split(':')[1]:
@@ -100,9 +101,9 @@ class Login_in:
                             msg = 'Пароль не совпадает'
                             mb.showerror("Ошибка", msg)
                             return
-                    msg = 'Такой пользователь не зарегестрирован'
-                    mb.showerror("Ошибка", msg)
-                    return
+                msg = 'Такой пользователь не зарегестрирован'
+                mb.showerror("Ошибка", msg)
+                return
             except:
                 msg = 'Еще ни один пользователь не зарегестрирован'
                 mb.showerror("Ошибка", msg)
